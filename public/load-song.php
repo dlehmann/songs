@@ -16,7 +16,8 @@ foreach($songtext as $num=>$line)
         // empty line:
         $output.= '<div class="verse_spacer"><br /></div>';
     }
-    else {
+    else 
+    {
         $line = preg_split('/\({1}([a-zA-Z0-9]+)\){1}/', $line, null, PREG_SPLIT_DELIM_CAPTURE);
         if (count($line) == 1) 
         {
