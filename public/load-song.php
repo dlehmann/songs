@@ -14,7 +14,7 @@ foreach($songtext as $num=>$line)
     if (preg_replace('/[\s\t\n\r]/m', '', $line) == '')
     {
         // empty line:
-        $output.= '<div class="verse_spacer"><br /></div>';
+        $output.= '<div class="verse-spacer"><br /></div>';
     }
     else 
     {
@@ -28,12 +28,18 @@ foreach($songtext as $num=>$line)
             $output .= '<table><tr>';
             for ($i = 0; $i < count($line); $i = $i + 2) 
             {
-                $output .= '<td>' . $line[$i - 1] . '</td>';
+                if (!empty($line[$i - 1].$line[$i])) 
+                {
+                    $output .= '<td>' . $line[$i - 1] . '</td>';
+                }   
             }
             $output .= '</tr><tr>';
             for ($i = 0; $i < count($line); $i = $i + 2) 
             {
-                $output .= '<td>' . str_replace(' ', '&nbsp;', $line[$i]) . '</td>';
+                if (!empty($line[$i - 1].$line[$i])) 
+                {
+                    $output .= '<td>' . str_replace(' ', '&nbsp;', $line[$i]) . '</td>';
+                }    
             }
             $output .= '</tr></table>';
         }
@@ -48,11 +54,19 @@ foreach($songtext as $num=>$line)
         </title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <style type="text/css">
+            @import url(http://fonts.googleapis.com/css?family=Roboto);
+            body {
+                font: 16px 'Roboto', sans-serif;
+            }
             table {
                 border-collapse: collapse;
             }
             table td {
-                border:1px solid #e7e7e7;
+                padding: 0;
+                margin:0;
+            }
+            .verse-spacer {
+                height:30px;
             }
         </style>
     </head>
