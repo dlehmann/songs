@@ -26,12 +26,14 @@ foreach($songtext as $num=>$line)
         else 
         {
             $output .= '<table><tr>';
-            for ($i = 0; $i < count($line); $i = $i + 2) {
-                $output .= '<td>' . $line[$i - 1] . '<td>';
+            for ($i = 0; $i < count($line); $i = $i + 2) 
+            {
+                $output .= '<td>' . $line[$i - 1] . '</td>';
             }
             $output .= '</tr><tr>';
-            for ($i = 0; $i < count($line); $i = $i + 2) {
-                $output .= '<td>' . str_replace(' ', '&nbsp;', $line[$i]) . '<td>';
+            for ($i = 0; $i < count($line); $i = $i + 2) 
+            {
+                $output .= '<td>' . str_replace(' ', '&nbsp;', $line[$i]) . '</td>';
             }
             $output .= '</tr></table>';
         }
