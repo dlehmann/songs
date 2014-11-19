@@ -1,5 +1,5 @@
 <?php
-$songtext = file('../songs/house-of-the-rising-sun.chords');
+$songtext = file('../songs/schlaflied.chords');
 
 $songtext = implode($songtext);
 preg_match('/^[\n\r\s]*-{3}([^-{3}]*)-{3}/i',$songtext,$matches);
