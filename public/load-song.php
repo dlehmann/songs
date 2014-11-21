@@ -1,5 +1,5 @@
 <?php
-$songtext = file('../songs/knocking-on-heavens-door.chords');
+$songtext = file('../songs/gwendolyn-kucharsky.chords');
 
 $songtext = implode($songtext);
 preg_match('/^[\n\r\s]*-{3}([^-{3}]*)-{3}/i',$songtext,$matches);
